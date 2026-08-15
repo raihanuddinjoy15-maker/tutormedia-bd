@@ -56,7 +56,7 @@ fences, in this exact shape:
 
     const ranked = parsed.ranked
       .map((r: { profile_id: string; reason: string }) => {
-        const tutor = candidates.find((c) => c.profile_id === r.profile_id);
+        const tutor = candidates.find((c: any) => c.profile_id === r.profile_id);
         return tutor ? { ...tutor, reason: r.reason } : null;
       })
       .filter(Boolean);
